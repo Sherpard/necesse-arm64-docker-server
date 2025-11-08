@@ -1,0 +1,17 @@
+services:
+  necesse:
+    build: .
+    container_name: necesse
+    env_file:
+      - .env
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}/udp"
+    volumes:
+      - ./data:/home/steam/data          # persistent saves
+      - ./cache:/home/steam/cache          # persistent zip cache
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
