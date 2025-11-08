@@ -19,8 +19,8 @@ A Docker container for running a Necesse dedicated game server, with support for
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/necesse-server-docker.git
-   cd necesse-server-docker
+   git clone https://github.com/Sherpard/necesse-arm64-docker-server.git
+   cd necesse-arm64-docker-server
    ```
 
 2. Copy the environment template and configure it:
