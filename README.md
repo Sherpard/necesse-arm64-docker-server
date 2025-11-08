@@ -2,6 +2,26 @@
 
 A Docker container for running a Necesse dedicated game server, with support for ARM64 architecture.
 
+## 📖 Overview
+
+This Docker image provides a streamlined way to run a Necesse dedicated server with true ARM64 support. Unlike traditional game server containers that rely on SteamCMD (which has limited ARM support), this implementation uses direct server downloads, making it perfectly compatible with platforms like Raspberry Pi and Apple Silicon.
+
+### Why This Image?
+
+- **True ARM64 Support**: Built specifically to work on ARM architecture without emulation
+- **Lightweight**: Uses Eclipse Temurin JRE 21 base image for optimal performance
+- **Security-Focused**: Runs as non-root user with minimal required permissions
+- **Auto-Updates**: Optional automatic server updates without manual intervention
+- **Easy Configuration**: All server settings configurable via environment variables
+- **Data Persistence**: Reliable volume mapping for world saves and configurations
+
+### Ideal For
+
+- Raspberry Pi home servers
+- Apple Silicon (M1/M2/M3) machines
+- Low-power dedicated gaming servers
+- Docker environments requiring ARM compatibility
+
 ## 🌟 Features
 
 - ARM64 compatible (runs on Raspberry Pi and Apple Silicon)
