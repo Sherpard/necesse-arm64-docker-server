@@ -48,7 +48,6 @@ CMD=(java -Xmx${JAVA_MEMORY} -jar Server.jar -nogui)
 # Conditional arguments based on environment
 [[ -n "$SETTINGS_FILE" ]]       && CMD+=(-settings "$SETTINGS_FILE")
 [[ -n "$WORLD_NAME" ]]          && CMD+=(-world "$WORLD_NAME")
-[[ -n "$SERVER_PORT" ]]         && CMD+=(-port "$SERVER_PORT")
 [[ -n "$SLOTS" ]]               && CMD+=(-slots "$SLOTS")
 [[ -n "$OWNER" ]]               && CMD+=(-owner "$OWNER")
 [[ -n "$MOTD" ]]                && CMD+=(-motd "$MOTD")
@@ -57,7 +56,6 @@ CMD=(java -Xmx${JAVA_MEMORY} -jar Server.jar -nogui)
 [[ -n "$GIVE_CLIENTS_POWER" ]]  && CMD+=(-giveclientspower "$GIVE_CLIENTS_POWER")
 [[ -n "$ZIP_SAVES" ]]           && CMD+=(-zipsaves "$ZIP_SAVES")
 [[ -n "$LANGUAGE" ]]            && CMD+=(-language "$LANGUAGE")
-[[ -n "$SERVER_IP" ]]           && CMD+=(-ip "$SERVER_IP")
 
 # Always specify logging options
 CMD+=(-logging "$LOGGING" -logs "$LOGS_PATH")

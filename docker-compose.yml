@@ -5,7 +5,7 @@ services:
     env_file:
       - .env
     ports:
-      - "${SERVER_PORT}:${SERVER_PORT}/udp"
+      - "${SERVER_PORT}:14159/udp"
     volumes:
       - ./data:/home/steam/data          # persistent saves
       - ./cache:/home/steam/cache          # persistent zip cache

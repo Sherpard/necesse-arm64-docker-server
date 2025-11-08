@@ -40,6 +40,21 @@ else
   wget -q -O "$ZIP_PATH" "$URL"
 fi
 
+
+# Cleanup old cache entries: keep only the newest 3 files
+KEEP=3
+
+echo "🗑️ Cleaning old cache entries (keeping $KEEP newest)..."
+
+# Ensure we only keep the newest $KEEP files
+mapfile -t _files < <(ls -1t "$CACHE_DIR"/necesse-server-linux64-*.zip 2>/dev/null || true)
+if [ "${#_files[@]}" -gt "$KEEP" ]; then
+  for f in "${_files[@]:$KEEP}"; do
+    [ "$f" != "$ZIP_PATH" ] && rm -f -- "$f"
+  done
+fi
+
+
 TMP_DIR=$(mktemp -d)
 unzip -q "$ZIP_PATH" -d "$TMP_DIR"
 INNER_DIR=$(find "$TMP_DIR" -mindepth 1 -maxdepth 1 -type d | head -n 1)

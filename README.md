@@ -51,7 +51,6 @@ A Docker container for running a Necesse dedicated game server, with support for
 | Variable             | Description                | Default         |
 | -------------------- | -------------------------- | --------------- |
 | `SERVER_PORT`        | UDP port for the server    | 14159           |
-| `SERVER_IP`          | IP address to bind to      | 0.0.0.0         |
 | `SLOTS`              | Maximum number of players  | 8               |
 | `OWNER`              | Admin username             | admin           |
 | `PASSWORD`           | Server password (optional) |                 |

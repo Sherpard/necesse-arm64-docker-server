@@ -8,7 +8,7 @@ LABEL description="Necesse Dedicated Server for Docker (ARM64-ready)"
 
 # Install minimal tools needed for updates and archive handling
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    wget unzip ca-certificates \
+    wget unzip ca-certificates net-tools \
     && rm -rf /var/lib/apt/lists/*
 
 # Create non-root user
@@ -28,6 +28,9 @@ USER steam
 
 # Expose default Necesse port (UDP)
 EXPOSE 14159/udp
+
+HEALTHCHECK --interval=60s --timeout=3s --start-period=10s --retries=5 \
+    CMD netstat -nlu | grep 14159 || exit 1
 
 # Start the server
 ENTRYPOINT ["/usr/local/bin/start-server.sh"]
